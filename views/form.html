@@ -1,0 +1,48 @@
+<form name="Form" role="form" ng-submit="submitForm(userForm.$valid)" novalidate>
+  <!--Name-->
+  <div class="row form-group">
+    <div class="col-md-3 text-right">
+      <label>Name</label>
+    </div>
+    <div class="col-md-9" ng-class="{ 'has-error' : Form.name.$invalid && !Form.name.$pristine }">
+      <input type="text" ng-model="user.name" name="name" class="form-control" maxlength="20" required>
+      <p ng-show="Form.name.$invalid && !Form.name.$pristine" class="help-block">Name is required.</p>
+    </div>
+  </div>
+  
+  <!--Email-->
+  <div class="row form-group">
+    <div class="col-md-3 text-right">
+      <label>Email</label>
+    </div>
+    <div class="col-md-9" ng-class="{ 'has-error' : Form.email.$invalid && !Form.email.$pristine }">
+      <input type="email" ng-model="user.email" name="email" class="form-control" maxlength="30" required>
+      <p ng-show="Form.email.$invalid && !Form.email.$pristine" class="help-block">Enter a valid email.</p>
+    </div>
+  </div>
+  <!--Confirm Email-->
+  <div class="row form-group">
+    <div class="col-md-3 text-right">
+      <label>Confirm Email</label>
+    </div>
+    <div class="col-md-9" ng-class="{ 'has-error' : Form.confemail.$invalid && !Form.confemail.$pristine }">
+      <input type="email" ng-model="user.confirmemail" email-match="user.email" name = "confemail" class="form-control" maxlength="30">
+      <p ng-show="Form.confemail.$invalid && !Form.confemail.$pristine" class="help-block">Error in confirm email.</p>
+    </div>
+  </div>
+  <!--Age-->
+  <div class="row form-group">
+    <div class="col-md-3 text-right">
+      <label>Age</label>
+    </div>
+    <div class="col-md-9" ng-class="{ 'has-error' : Form.age.$invalid && !Form.age.$pristine }">
+      <input type="number" min="1" max="99" ng-model="user.age" name="age" class="form-control" maxlength="2">
+      <p ng-show="Form.age.$invalid && !Form.age.$pristine" class="help-block">Enter valid age</p>
+<!--      <p ng-show="Form.confemail.$invalid && !Form.confemail.$pristine" class="help-block">Not a valid Number.</p>-->
+    </div>
+  </div>
+  <!--Add Button-->
+  <div class="form-group">
+    <button type="submit" class="btn btn-success" ng-disabled="Form.$invalid" ng-click="addNewUser(user)">Add</button>
+  </div>
+</form>

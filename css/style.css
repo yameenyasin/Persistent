@@ -1,0 +1,111 @@
+body {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #BCBBB6), color-stop(0.67, #FFFFFF));
+  background-image: -o-linear-gradient(bottom, #BCBBB6 0%, #FFFFFF 67%);
+  background-image: -moz-linear-gradient(bottom, #BCBBB6 0%, #FFFFFF 67%);
+  background-image: -webkit-linear-gradient(bottom, #BCBBB6 0%, #FFFFFF 67%);
+  background-image: -ms-linear-gradient(bottom, #BCBBB6 0%, #FFFFFF 67%);
+  background-image: linear-gradient(to bottom, #BCBBB6 0%, #FFFFFF 67%);
+}
+.logo {
+  height: 80px;
+  margin: 10px auto;
+}
+.box-shadow {
+  /*css3 box-shadow with vendor prefixes*/
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+.app-wrapper {
+  margin: 15px auto;
+  background: white;
+  border-radius: 15px;
+}
+.item-list {
+  background: #fff;
+  margin: 5px;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  width: 260px;
+  height: 150px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  cursor: pointer;
+}
+.desc-wrapper {
+  margin-left: 25px;
+  width: 94%;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  background: lightgrey;
+}
+.carousel-image {
+  width: 260px;
+  height: 150px;
+}
+/*Carousel*/
+
+.carousel-indicators {
+  bottom: -10px;
+}
+.carousel-indicators li {
+  border-radius: 0;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border: 1px solid #ccc;
+}
+.carousel-indicators .active {
+  width: 12px;
+  height: 12px;
+  background: #3276b1;
+  border-color: #3276b1;
+}
+.carousel-inner {
+  padding-left: 7px;
+}
+.carousel-control {
+  width: auto;
+}
+.carousel-control:hover {} .carousel-control {
+  color: #E92323 !important;
+}
+/* Form Validation*/
+
+.input-help {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  top: -6px;
+  left: 160px;
+  width: 200px;
+  padding: 10px;
+  background: #fefefe;
+  font-size: .875em;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px #aaa;
+  border: 1px solid #ddd;
+  opacity: 0.9;
+}
+.social-media-share {
+  border: 1px solid #ccc;
+  background: url("../images/UI_dev_test.jpg");
+  position: fixed;
+  height: 212px;
+  width: 42px;
+  float: right;
+  top: 30%;
+  right: 0;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+.selected{
+  border-bottom: 4px solid red;
+}
+thead {
+    border-bottom: 2px solid black; 
+    cursor: pointer;  
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "name" : "Thomas  Rogger",
+    "email" : "thomas@hotmail.com",
+    "age":43
+  },
+  {
+    "name" : "Yameen Yasin",
+    "email" : "yamin.kmr@gmail.com",
+    "age":26
+  },
+  {
+    "name" : "Michael Rudof",
+    "email" : "mikey@hotmail.com",
+    "age":54
+  }
+]

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Persistent">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Persistent</title>
+  <link rel="icon" href="images/PersistentLogo.png">
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="css/style.css">  
+</head>
+
+<body ng-controller="appController">
+
+  <!--loader-->
+  <section class="loader-wrapper" ng-show="loader">
+    <section class="loader"></section>
+  </section>
+  
+  <!--share floating div-->
+  <section class="social-media-share">
+    
+  </section>
+
+  <!-- Main Application Content-->
+  <div class="container app-wrapper box-shadow">
+    <!--  Persistent Logo-->
+    <div class="col-md-12">
+      <img class="logo" src="images/PersistentLogo.png">
+    </div>
+    
+    <!--  Carousel-->
+    <div ng-controller="Carousel">
+      <div class="col-md-12" ng-include src="carouselURL"></div>
+      <!--    Selected Item description-->
+      <div class="col-md-12 box-shadow desc-wrapper" ng-include src="descriptionURL" ng-show="currentItem"></div>
+    </div>
+    
+    <!--    Form and Table -->
+    <div class="col-md-12" ng-controller="Form">
+      <div class="col-md-6" ng-include src="formURL"></div>
+      <div class="col-md-6" ng-include src="tableURL"></div>
+    </div>
+    
+    <!--    End of Main Content-->
+  </div>
+
+  <script src="vendor/libs/angular.min.js"></script>
+  <script src="vendor/libs/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="controllers/application.js"></script>
+  <script src="controllers/carousel.js"></script>
+  <script src="controllers/form.js"></script>
+
+</body>
+
+</html>

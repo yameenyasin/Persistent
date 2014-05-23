@@ -1,0 +1,22 @@
+<div id="myCarousel" class="carousel slide carousel-outer" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="item" ng-class="{active : $first}" ng-repeat="itemGroup in carouselGroupItems">
+                <div class="col-md-3  item-list box-shadow" ng-repeat="item in itemGroup">
+                    <img class="carousel-image" ng-class="checkClass(item)" ng-src="images/{{item.imageUrl}}" ng-click="setCurrentItem(item)">
+                </div>
+        </div>
+    </div> 
+
+    <!--controls-->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev" ng-click="hidePropertyWindow()">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next" ng-click="hidePropertyWindow()">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" ng-class="{active : $first}" ng-repeat="contactList in Contacts" ng-click="hidePropertyWindow()" data-slide-to="{{$index}}"></li>
+    </ol>
+</div>

@@ -1,0 +1,16 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age<a href="" ng-click="predicate = 'age'; reverse = !reverse">^</a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="user in UserData | orderBy:predicate:reverse">
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.age}}</td>
+    </tr>
+  </tbody>
+</table>
