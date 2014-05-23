@@ -2,7 +2,7 @@
     <div class="carousel-inner">
         <div class="item" ng-class="{active : $first}" ng-repeat="itemGroup in carouselGroupItems">
                 <div class="col-md-3  item-list box-shadow" ng-repeat="item in itemGroup">
-                    <img class="carousel-image" ng-class="checkClass(item)" ng-src="images/{{item.imageUrl}}" ng-click="setCurrentItem(item)">
+                    <img class="carousel-image" ng-class="{selected: $index == selectedIndex}" ng-src="images/{{item.imageUrl}}" ng-click="setCurrentItem(item);select($index)">
                 </div>
         </div>
     </div> 
@@ -15,8 +15,4 @@
         <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
 
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" ng-class="{active : $first}" ng-repeat="contactList in Contacts" ng-click="hidePropertyWindow()" data-slide-to="{{$index}}"></li>
-    </ol>
 </div>

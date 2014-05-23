@@ -2,6 +2,7 @@
 Persistent.controller('Carousel', function ($scope, $http, $timeout) {
   $scope.CarouselData = [];
   $scope.currentItem = null;
+  $scope.selectedIndex = 0;
 
   // Get Carousel data from JSON
   var promise = $http.get("data/CarouselData.json");
@@ -13,11 +14,6 @@ Persistent.controller('Carousel', function ($scope, $http, $timeout) {
     //Set the Current item to first element in CarouselData
     $scope.currentItem = $scope.CarouselData[0] || null;
 
-    //simulate client server comm
-    $timeout(function () {
-      $scope.loader = false;
-    }, 3000);
-
     console.log('AJAX succesfull, status: ', status);
   });
   promise.error(function (data, status) {
@@ -27,6 +23,11 @@ Persistent.controller('Carousel', function ($scope, $http, $timeout) {
   //set currentItem to item selected from carousel
   $scope.setCurrentItem = function (selectedItem) {
     $scope.currentItem = angular.copy(selectedItem);
+  };
+    
+  // set Index of selected item
+  $scope.select= function(index) {
+       $scope.selectedIndex = index; 
   };
 
   // Bulid Slides for Carousel - No of slides to be displayed in variable "count"
@@ -51,16 +52,5 @@ Persistent.controller('Carousel', function ($scope, $http, $timeout) {
       $scope.carouselGroupItems = groupedData;
     }
   }, true);
-  
-  // True if Carousel item is selected else false
-  $scope.checkClass = function(item){
-    console.log(item == $scope.currentItem);
-    if(item == $scope.currentItem) {
-      return "selected";
-    }
-    else{
-      return "";
-    }
-  };
   
 });

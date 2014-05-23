@@ -35,17 +35,17 @@ Persistent.directive('emailMatch', [function () {
         link: function (scope, elem , attrs,control) {
             var checker = function () {
  
-                //get the value of the first password
+                //get the value of the email field
                 var e1 = scope.$eval(attrs.ngModel); 
  
-                //get the value of the other password  
+                //get the value of the confirm email field 
                 var e2 = scope.$eval(attrs.emailMatch);
                 return e1 == e2;
             };
             scope.$watch(checker, function (n) {
  
                 //set the form control to valid if both 
-                //passwords are the same, else invalid
+                //emails are the same, else invalid
                 control.$setValidity("unique", n);
             });
         }
